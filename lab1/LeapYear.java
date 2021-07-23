@@ -2,7 +2,17 @@
  *  @author YOUR NAME HERE
  */
 public class LeapYear {
-
+    /**
+    闰年判定
+    可被 400 整除或
+    能被 4 整除，不能被 100 整除。 */
+    public static boolean isLeapYear(int year){
+        if((year % 400 == 0)||(year%4==0&&year%100!=0)){
+            return true;
+        }
+        return false;
+    }
+    
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
      */
