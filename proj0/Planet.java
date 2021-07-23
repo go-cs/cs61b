@@ -36,7 +36,7 @@ public class Planet{
 	/**
 	计算给定物体施加在该物体上的力，方法calcForceExertedBy
 	*/
-	public static double g = 6.67e-11;
+	private double g = 6.67e-11;
 	public double calcForceExertedBy(Planet b2){
 		double f = g*this.mass*b2.mass/(this.calcDistance(b2)*this.calcDistance(b2));
 		return f;
