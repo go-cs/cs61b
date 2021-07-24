@@ -82,7 +82,12 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList p = A;
+        while(p.rest != null){
+            p = p.rest;
+        }
+        p.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +96,26 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList C = new IntList(A.first,null);
+        IntList p = C;//A和B连到一块的列表
+        IntList A_location = A.rest;//列表A
+        while(A_location.rest != null){
+            p.rest = new IntList(A_location.first,null);
+            A_location = A_location.rest;
+            p = p.rest;
+        }
+        p.rest = new IntList(A_location.first,null);
+        p = p.rest;
+
+        //把列表B中的元素复制一份，读到C中
+        IntList B_location = B;
+        while(B_location.rest != null){
+            p.rest = new IntList(B_location.first,null);
+            B_location = B_location.rest;
+            p = p.rest;
+        }
+        p.rest = new IntList(B_location.first,null);
+        return C;
     }
 
 

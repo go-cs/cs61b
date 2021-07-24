@@ -11,7 +11,7 @@ public class DebugExercise3 {
             int numAvailable = in.readInt();
             if (foodType.equals("turnip")) {
                 int newTotal = totalTurnips + numAvailable;
-                totalTurnips = newTotal;
+                totalTurnips = newTotal;//第89行数据出错了，突然出现一个很大的负数
             }
             in.readLine();
         }
