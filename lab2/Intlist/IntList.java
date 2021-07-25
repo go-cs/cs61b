@@ -82,6 +82,9 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
+        if(A == null && B == null){
+            return null;
+        }
         IntList p = A;
         while(p.rest != null){
             p = p.rest;
@@ -96,6 +99,9 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
+        if(A == null && B == null){
+            return null;
+        }
         IntList C = new IntList(A.first,null);
         IntList p = C;//A和B连到一块的列表
         IntList A_location = A.rest;//列表A
