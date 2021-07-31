@@ -12,14 +12,14 @@ public class ArrayDeque<T> {
     }
     /**队满返回false*/
     private boolean isFull() {
-        if (size == items.length){
+        if (size == items.length) {
             return true;
         }
         return false;
     }
     /**是否缩小队列*/
     private boolean isSparse() {
-        if(items.length >= 16 && size < (items.length / 4)){
+        if (items.length >= 16 && size < (items.length / 4)) {
             return true;
         }
         return false;
@@ -65,7 +65,7 @@ public class ArrayDeque<T> {
     }
     /**在双端队列后边添加一项*/
     public void addLast(T item) {
-        if(isFull()) {
+        if (isFull()) {
             upSize();
         }
 
@@ -128,6 +128,7 @@ public class ArrayDeque<T> {
         return items[(start + index) % items.length];
     }
     /**创建副本*/
+    /**
     public ArrayDeque(ArrayDeque other) {
         items = (T[]) new Object[other.size];
         nextFirst = other.nextFirst;
@@ -135,7 +136,7 @@ public class ArrayDeque<T> {
         size = other.size;
 
         System.arraycopy(other.items, 0, items, 0, other.size);
-    }
+    }*/
 
 
 }

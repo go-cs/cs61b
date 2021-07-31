@@ -5,7 +5,7 @@ public class LinkedListDeque<T> {
 
     private TNode sentinel;
     private int size;
-    public class TNode {
+    private class TNode {//为啥此处要用private
         private T item;
         private TNode prev;
         private TNode next;
@@ -17,14 +17,16 @@ public class LinkedListDeque<T> {
     }
     /**创建一个空链表双端循环队列*/
     public LinkedListDeque() {
-        sentinel = new TNode(  null, null, null);
+        sentinel = new TNode( null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
         size = 0;
     }
+
     /**构造函数LinkedListDeque的副本*/
+    /**
     public LinkedListDeque(LinkedListDeque other) {
-        sentinel = new TNode ( null, null, null);
+        sentinel = new TNode( null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
         size = 0;
@@ -32,17 +34,17 @@ public class LinkedListDeque<T> {
         for (int i = 0; i < other.size(); i += 1) {
             addLast((T) other.get(i));
         }
-    }
+    }*/
     /**在列表前添加一项*/
     public void addFirst(T x) {
-        sentinel.next = new TNode(  x,  sentinel, sentinel.next);
+        sentinel.next = new TNode( x,  sentinel, sentinel.next);
         sentinel.next.next.prev = sentinel.next;
         //双向链表,上一句修改了next，这一句要修改prev
         size += 1;
     }
     /**在列表后添加一项*/
     public void addLast(T x) {
-        sentinel.prev = new TNode( x, sentinel.prev, sentinel);
+        sentinel.prev = new TNode(x, sentinel.prev, sentinel);
         sentinel.prev.prev.next = sentinel.prev; //双向循环链表，
         size += 1;
 
@@ -94,16 +96,22 @@ public class LinkedListDeque<T> {
      * 迭代
      * 0是队头*/
     public T get(int index) {
-        if (sentinel.next == sentinel) {
-            return null;
+//        if (sentinel.next == sentinel) {
+//            return null;
+//        }
+//        TNode p = sentinel;
+//        int num = size;
+//        while (p.next != sentinel && num > 0) {
+//            p = p.next;
+//            num -= 1;
+//        }
+//        return p.item;
+        TNode toGet = sentinel.next;
+        for (int i = 0; i < index; i++) {
+            toGet = toGet.next;
+
         }
-        TNode p = sentinel;
-        int num = size;
-        while (p.next != sentinel && num > 0) {
-            p = p.next;
-            num -= 1;
-        }
-        return p.item;
+        return toGet.item;
     }
     /**返回列表的第index项
      * 递归*/
@@ -111,7 +119,7 @@ public class LinkedListDeque<T> {
         if (index == 0) {
             return curr.item;
         }
-        return getRecursive( index - 1, curr.next);
+        return getRecursive(index - 1, curr.next);
     }
 
     public T getRecursive(int index) {
