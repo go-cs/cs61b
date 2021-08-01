@@ -5,7 +5,7 @@ public class LinkedListDeque<T> {
 
     private TNode sentinel;
     private int size;
-    private class TNode {//为啥此处要用private
+    private class TNode { //为啥此处要用private
         private T item;
         private TNode prev;
         private TNode next;
@@ -17,7 +17,7 @@ public class LinkedListDeque<T> {
     }
     /**创建一个空链表双端循环队列*/
     public LinkedListDeque() {
-        sentinel = new TNode( null, null, null);
+        sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
         size = 0;
@@ -37,7 +37,7 @@ public class LinkedListDeque<T> {
     }*/
     /**在列表前添加一项*/
     public void addFirst(T x) {
-        sentinel.next = new TNode( x,  sentinel, sentinel.next);
+        sentinel.next = new TNode(x,  sentinel, sentinel.next);
         sentinel.next.next.prev = sentinel.next;
         //双向链表,上一句修改了next，这一句要修改prev
         size += 1;
