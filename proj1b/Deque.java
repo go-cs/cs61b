@@ -1,6 +1,3 @@
-import java.util.ArrayDeque;
-import java.util.LinkedList;
-
 public interface Deque<T> {
 
     /**导入LinkedListDeque的方法*/

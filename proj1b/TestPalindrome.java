@@ -39,7 +39,7 @@ public class TestPalindrome {
     }
 
     @Test
-    public void TestIsPalindromeOverloads() {
+    public void testIsPalindromeOverloads() {
         assertTrue(palindrome.isPalindrome("flake", cc));
     }
 
