@@ -112,6 +112,6 @@ public class SLList{
         L.addFirst(6);
         L.addFirst(5);
         L.insert(10, 1);
-        L.reverse(L.first);
+        L.reverse();
     }
 }
