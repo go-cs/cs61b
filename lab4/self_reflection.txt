@@ -4,27 +4,27 @@ ArrayDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: 1.程序开头要先初始化，也就是创建一个空的循环数组。2.当数组中元素特别少时，会浪费大量的空间，要保证使用系数≥25%，因此还需要写一个函数判断是否需要缩小数组。3.在循环数组中添加或者删除元素都用到了取模，这保证运行时不会出现越界的错误。4.在删除元素时，index-1时还需要再加上数组长度，因为index==0时删除当前元素，要插入的位置回到了数组末端5.重新改变队列大小这一块不是太懂6.扩展队列为啥*2，缩小队列为啥/2。7.在双端队列前添加一项，需要先判断队列是否满了8.打印双端队列，for循环中的条件也写得很巧妙9.删除并返回双端队列中的项，先保存要删除的项，然后再返回它。分为删除前和后，因为一个是plus，一个是minus。10.获取给定索引项时，需要先得到开头项的下标，然后再与索引项求和，再对队列长取模。11.为啥定义的变量用private，有的方法也得用，private。
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A:我能定义完需要的参数，写出一个基本的框架，但是细节部分考虑的少，编写出来的函数用不了。
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A:直接在队列中+1和-1，没有考虑出现负数，或者超过队列长的因素。
 
 Q: What did you learn by talking to your partner about writing ArrayDeque?
 
-A:
+A:github上的大佬厉害，代码简介功能强大。
 
 Q: What do you wish you would have known before writing ArrayDeque, if anything?
 
-A:
+A:希望写的又快有优雅又准确
 
 Q: If you wrote ArrayDeque again, what would you do differently, if anything?
 
-A:
+A:写的更快一点儿，不理解的地方暴漏出来。
 
 -----
 
@@ -32,27 +32,27 @@ LinkedListDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: 1.LinkedListDeque基本上是自己写出来的，但是第一次写看成sp2019的文档了，多了个写副本的2.在列表中添加一项，因为是双向循环链表，当插入和删除的时候，不仅要续改prev还需要修改next，经常忘记修改prev。3.删除并返回列表的一项，需要先保存这一项。然后插入的时候要判断列表满不满，删除的时候要判断列表空不空。4.返回索引项时，要先保存sentinel.next然后再用for循环不断后移。5.返回索引项的迭代写法，先写了一个private的方法，然后又写了一个public的方法，并在public方法中调用private方法。
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A:大部分是自己写出来的
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A:创建空链表这一部分感觉自己写的不错。
 
 Q: What did you learn by talking to your partner about writing LinkedListDeque?
 
-A:
+A:他很厉害，我很想像他一样厉害哦。
 
 Q: What do you wish you would have known before writing LinkedListDeque, if anything?
 
-A:
+A:又快又好
 
 Q: If you wrote LinkedListDeque again, what would you do differently, if anything?
 
-A:
+A:用的时间更短，发现自己似懂非懂的地方。
 
 -----
 
@@ -60,4 +60,4 @@ Meta:
 
 Q: Did you like this design review process? Anything we should do differently next time?
 
-A: 
+A: 感觉还不错，回顾整个项目，发现并补充自己的不足，
