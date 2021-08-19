@@ -20,14 +20,14 @@ public class TestArrayDequeGold {
             }
         }
         sad1.removeFirst();
-        assertEquals("oh nooo!\n This is bad!\n the length is "+
-                sad1.size()+" is not equal to "+ 10+ "!",sad1.size(), 9);
+        assertEquals("Oh noooo!\n This is bad :\n the length is "+
+                sad1.size()+" not equal to "+ 10+ "!",sad1.size(), 10);
         for (int i = 0; i < 10; i++) {
             stu1.addFirst(StdRandom.uniform(1, 10));
         }
 
-        //assertEquals("oh noooo!\n this is bad!\n " + sad1.get(1) + "!" +
-        //        " is not equal " + stu1.get(1) + "!", sad1.get(1), stu1.get(1));
+        assertEquals("Oh noooo!\n This is bad:\n " + sad1.get(1) + "!" +
+               " is not equal to " + stu1.get(1) + "!", sad1.get(1), stu1.get(1));
     }
 
     @Test
