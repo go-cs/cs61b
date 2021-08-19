@@ -3,31 +3,23 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class TestArrayDequeGold {
-    //StudentArrayDeque<Integer> stu1 = new StudentArrayDeque<>();
-
 
     @Test
     public void testArrayDequeSize() {
-        StudentArrayDeque<Integer> sad1 = new StudentArrayDeque<>();
-        ArrayDequeSolution<Integer> stu1 = new ArrayDequeSolution<>();
-        for (int i = 0; i < 10; i += 1) {
-            double numberBetweenZeroAndOne = StdRandom.uniform();
-
-            if (numberBetweenZeroAndOne < 0.5) {
-                sad1.addLast(i);
-            } else {
-                sad1.addFirst(i);
-            }
-        }
-        sad1.removeFirst();
-        assertEquals("Oh noooo!\n This is bad :\n the length is "+
-                sad1.size()+" not equal to "+ 10+ "!",sad1.size(), 10);
+        StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
+        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
         for (int i = 0; i < 10; i++) {
-            stu1.addFirst(StdRandom.uniform(1, 10));
+            int random = StdRandom.uniform(1,10);
+            sad.addFirst(random);
+            ads.addFirst(random);
+        }
+        for (int i = 0; i < 10; i++) {
+            int excepted = sad.get(i);
+            int actual = ads.get(i);
+            assertEquals("Oh noooo!\n This is bad:\n " + excepted + "!" +
+                    " is not equal to " + actual + "!", excepted, actual);
         }
 
-        assertEquals("Oh noooo!\n This is bad:\n " + sad1.get(1) + "!" +
-               " is not equal to " + stu1.get(1) + "!", sad1.get(1), stu1.get(1));
     }
 
     @Test
@@ -46,7 +38,7 @@ public class TestArrayDequeGold {
         ads.addLast(random);
         assertEquals("addLast+(" + random + ")", sad.get(1), ads.get(1));
         //removeFirst
-        int expected = sad.removeFirst();
+        int expected = ads.removeFirst();
         int actual = ads.removeFirst();
         assertEquals(expected, actual);
         //removeLast
