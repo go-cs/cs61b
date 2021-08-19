@@ -28,5 +28,30 @@ public class TestArrayDequeGold {
                 " is not equal " + stu1.get(1) + "!", sad1.get(1), stu1.get(1));
     }
 
+    @Test
+    public void test2() {
+        StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
+        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
+        int random = StdRandom.uniform(1, 50);
+
+        //addFirst
+        sad.addFirst(random);
+        ads.addFirst(random);
+        assertEquals("addFirst+(" + random + ")", ads.get(0), sad.get(0));
+        //addLast
+        random = StdRandom.uniform(1, 5);
+        sad.addLast(random);
+        ads.addLast(random);
+        assertEquals("addLast+(" + random + ")", sad.get(1), ads.get(1));
+        //removeFirst
+        int expected = sad.removeFirst();
+        int actual = ads.removeFirst();
+        assertEquals(expected, actual);
+        //removeLast
+        expected = sad.removeLast();
+        actual = ads.removeLast();
+        assertEquals(expected, actual);
+    }
+
 
 }
