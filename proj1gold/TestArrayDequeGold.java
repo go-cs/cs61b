@@ -4,23 +4,23 @@ import org.junit.Test;
 
 public class TestArrayDequeGold {
 
-    @Test
-    public void testArrayDequeSize() {
-        StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
-        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
-        for (int i = 0; i < 10; i++) {
-            int random = StdRandom.uniform(1,10);
-            sad.addFirst(random);
-            ads.addFirst(random);
-        }
-        for (int i = 0; i < 10; i++) {
-            int excepted = sad.get(i);
-            int actual = ads.get(i);
-            assertEquals("Oh noooo!\n This is bad:\n " + excepted + "!" +
-                    " is not equal to " + actual + "!", excepted, actual);
-        }
-
-    }
+//    @Test
+//    public void testArrayDequeSize() {
+//        StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
+//        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
+//        for (int i = 0; i < 10; i++) {
+//            int random = StdRandom.uniform(1,10);
+//            sad.addFirst(random);
+//            ads.addFirst(random);
+//        }
+//        for (int i = 0; i < 10; i++) {
+//            int excepted = sad.get(i);
+//            int actual = ads.get(i);
+//            assertEquals("Oh noooo!\n This is bad:\n " + excepted + "!" +
+//                    " is not equal to " + actual + "!", excepted, actual);
+//        }
+//
+//    }
 
     @Test
     public void test2() {
