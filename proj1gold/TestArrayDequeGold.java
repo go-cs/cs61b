@@ -32,13 +32,13 @@ public class TestArrayDequeGold {
         sad.addFirst(random);
         ads.addFirst(random);
         assertEquals("addFirst+(" + random + ")", ads.get(0), sad.get(0));
-        System.out.println(random);
+        //System.out.println(random);
         //addLast
-        random = StdRandom.uniform(1, 5);
+        random = StdRandom.uniform(1, 50);
         sad.addLast(random);
         ads.addLast(random);
         assertEquals("addLast+(" + random + ")", sad.get(1), ads.get(1));
-        System.out.println(random);
+        //System.out.println(random);
         //removeFirst
         int expected = ads.removeFirst();
         int actual = ads.removeFirst();
@@ -46,7 +46,7 @@ public class TestArrayDequeGold {
         //removeLast
         expected = sad.removeLast();
         actual = ads.removeLast();
-        assertEquals(expected, actual);
+        assertEquals("removeLast()",expected, actual);
     }
 
 
