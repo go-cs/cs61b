@@ -40,7 +40,7 @@ public class TestArrayDequeGold {
         //removeFirst
         int expected = ads.removeFirst();
         int actual = ads.removeFirst();
-        assertEquals(expected, actual);
+        assertEquals("removeFirst()",expected, actual);
         //removeLast
         expected = sad.removeLast();
         actual = ads.removeLast();
