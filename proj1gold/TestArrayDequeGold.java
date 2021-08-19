@@ -23,53 +23,30 @@ public class TestArrayDequeGold {
 //    }
 
     @Test
-//    public void test2() {
-//        StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
-//        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
-//        int random = StdRandom.uniform(1, 50);
-//
-//        //addFirst
-//        sad.addFirst(random);
-//        ads.addFirst(random);
-//        assertEquals("addFirst+(" + random + ")", ads.get(0), sad.get(0));
-//        //addLast
-//        random = StdRandom.uniform(1, 5);
-//        sad.addLast(random);
-//        ads.addLast(random);
-//        assertEquals("addLast+(" + random + ")", sad.get(1), ads.get(1));
-//        //removeFirst
-//        int expected = ads.removeFirst();
-//        int actual = ads.removeFirst();
-//        assertEquals("removeFirst()",expected, actual);
-//        //removeLast
-//        expected = sad.removeLast();
-//        actual = ads.removeLast();
-//        assertEquals(expected, actual);
-//    }
-    public void testArratDeque2() {
-        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
+    public void test2() {
         StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
-        int random = StdRandom.uniform(100);
-        ads.addFirst(random);
+        ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
+        int random = StdRandom.uniform(1, 50);
+
+        //addFirst
         sad.addFirst(random);
-        assertEquals("addFirst("+random+")", ads.get(0), sad.get(0));
-        System.out.println("addFirst("+random+")");
-
-        random = StdRandom.uniform(100);
-        ads.addLast(random);
+        ads.addFirst(random);
+        assertEquals("addFirst+(" + random + ")", ads.get(0), sad.get(0));
+        System.out.println(random);
+        //addLast
+        random = StdRandom.uniform(1, 5);
         sad.addLast(random);
-        assertEquals("addLast("+random+")", ads.get(1), sad.get(1));
-        System.out.println("addLast("+random+")");
-
-        int actual = ads.removeFirst();
+        ads.addLast(random);
+        assertEquals("addLast+(" + random + ")", sad.get(1), ads.get(1));
+        System.out.println(random);
+        //removeFirst
         int expected = ads.removeFirst();
-        assertEquals("removeFirst()", actual, expected);
-        System.out.println("removeFirst()");
-
-        actual = ads.removeLast();
+        int actual = ads.removeFirst();
+        assertEquals("removeFirst()",expected, actual);
+        //removeLast
         expected = sad.removeLast();
-        assertEquals("removeLast()", actual, expected);
-        System.out.println("removeLast()");
+        actual = ads.removeLast();
+        assertEquals(expected, actual);
     }
 
 
