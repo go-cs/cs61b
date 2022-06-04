@@ -89,7 +89,11 @@ public class MergeSort {
     public static <Item extends Comparable> Queue<Item> mergeSort(
             Queue<Item> items) {
         // Your code here!
+
         int n = items.size();
+        if (n == 0) {
+            return items;
+        }
         Queue<Queue<Item>> singleQueue = makeSingleItemQueues(items);
         Queue<Queue<Item>> tempQueue = new Queue<Queue<Item>>();
         Queue<Item> q = new Queue<>();
