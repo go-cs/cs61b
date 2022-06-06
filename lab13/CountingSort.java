@@ -2,7 +2,6 @@
  * Class with 2 ways of doing Counting sort, one naive way and one "better" way
  *
  * @author Akhil Batra, Alexander Hwang
- *
  **/
 public class CountingSort {
     /**
@@ -23,7 +22,7 @@ public class CountingSort {
         // gather all the counts for each value
         int[] counts = new int[max + 1];
         for (int i : arr) {
-            counts[i]++;
+            counts[i]++;//counts 下标范围是0-max，显然不能包括负数
         }
 
         // when we're dealing with ints, we can just put each value
@@ -67,6 +66,34 @@ public class CountingSort {
      */
     public static int[] betterCountingSort(int[] arr) {
         // TODO make counting sort work with arrays containing negative numbers.
-        return null;
+        //我的解决办法：如果数组中存在负数，找出数组中最小的数，然后数组中所有的元素都加上这个最小数的相反数
+        //最后的输出结果再减去上边的那个数
+        boolean flag = false;
+        int min = Integer.MAX_VALUE;
+        int[] res = new int[arr.length];
+        for (int i : arr) {
+            if (i < 0) {
+                flag = true;
+            }
+        }
+        if (!flag) {
+            naiveCountingSort(arr);
+        } else {
+            for (int i : arr) {
+                min = min < i ? min : i;
+            }
+
+            int[] betterArr = new int[arr.length];
+            for (int i = 0; i < arr.length; i++) {
+                betterArr[i] = arr[i] - min;
+            }
+
+            res = naiveCountingSort(betterArr);
+            for (int i : res) {
+                i = i + min;
+            }
+
+        }
+        return res;
     }
 }
