@@ -74,10 +74,11 @@ public class CountingSort {
         for (int i : arr) {
             if (i < 0) {
                 flag = true;
+                break;
             }
         }
         if (!flag) {
-            naiveCountingSort(arr);
+            return naiveCountingSort(arr);
         } else {
             for (int i : arr) {
                 min = min < i ? min : i;
@@ -89,10 +90,12 @@ public class CountingSort {
             }
 
             res = naiveCountingSort(betterArr);
-            for (int i : res) {
-                i = i + min;
+//            for (int i : res) {
+//                i = i + min;
+//            }
+            for (int i = 0; i < res.length; i++) {
+                res[i] += min;
             }
-
         }
         return res;
     }

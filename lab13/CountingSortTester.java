@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CountingSortTester {
@@ -54,8 +55,17 @@ public class CountingSortTester {
         assertIsSorted(sortedSomeNegative);
     }
 
+    @Test
+    public void testNegative() {
+        int[] actual = CountingSort.betterCountingSort(someNegative);
+        int[] expected = {-4, -2, -2, 0, 1, 1, 1, 2, 3, 3, 5, 5, 9};
+        assertArrayEquals(actual, expected);
+
+    }
+
 
     public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(CountingSortTester.class);
+
     }
 }
