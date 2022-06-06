@@ -68,34 +68,24 @@ public class CountingSort {
         // TODO make counting sort work with arrays containing negative numbers.
         //我的解决办法：如果数组中存在负数，找出数组中最小的数，然后数组中所有的元素都加上这个最小数的相反数
         //最后的输出结果再减去上边的那个数
-        boolean flag = false;
         int min = Integer.MAX_VALUE;
         int[] res = new int[arr.length];
+
         for (int i : arr) {
-            if (i < 0) {
-                flag = true;
-                break;
-            }
+            min = min < i ? min : i;
         }
-        if (!flag) {
-            return naiveCountingSort(arr);
-        } else {
-            for (int i : arr) {
-                min = min < i ? min : i;
-            }
 
-            int[] betterArr = new int[arr.length];
-            for (int i = 0; i < arr.length; i++) {
-                betterArr[i] = arr[i] - min;
-            }
+        int[] betterArr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            betterArr[i] = arr[i] - min;
+        }
 
-            res = naiveCountingSort(betterArr);
+        res = naiveCountingSort(betterArr);
 //            for (int i : res) {
 //                i = i + min;
 //            }
-            for (int i = 0; i < res.length; i++) {
-                res[i] += min;
-            }
+        for (int i = 0; i < res.length; i++) {
+            res[i] += min;
         }
         return res;
     }
